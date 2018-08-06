@@ -1,0 +1,39 @@
+@import "../../../theme/theme-variables";
+
+.comment-input {
+  min-height: 70px;
+  resize: none;
+  border-radius: 0;
+  font-size: $text-font;
+  color: $foreground;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+
+  &.default {
+    background-color: $avatar-default-bg;
+  }
+}
+
+li {
+  font-size: $text-font;
+  font-weight: 400;
+
+  p {
+    color: $comment-fg;
+  }
+
+  &:nth-child(odd) {
+    .avatar {
+      background-color: $avatar-odd-bg;
+    }
+  }
+
+  &:nth-child(even) {
+    .avatar {
+      background-color: $avatar-even-bg;
+    }
+  }
+}

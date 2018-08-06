@@ -1,0 +1,7 @@
+@import "../../../theme/theme-variables";
+
+.card-item {
+  background-color: $card-bg;
+  box-shadow: 0 0 6px 0 $card-shadow;
+  color: $title-fg;
+}

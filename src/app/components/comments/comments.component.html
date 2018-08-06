@@ -1,0 +1,28 @@
+<ngx-spinner
+  bdOpacity = 0.9
+  bdColor = "#ffffff"
+  size = "large"
+  color = "blue"
+  type = "line-scale-pulse-out">
+</ngx-spinner>
+<div *ngIf="!isLoading">
+  <ul class="py-3">
+    <li *ngIf="comments?.length < 1" class="pl-4 pr-3 pt-3">
+      <div class="pl-2 pb-4 d-flex">
+        <h5>There is no comments</h5>
+      </div>
+    </li>
+    <li *ngFor="let comment of comments" class="pl-4 pr-3 pt-3">
+      <div class="item pl-2 pb-4 d-flex">
+          <div>
+            <div class="avatar default mr-3"></div>
+          </div>
+          <p>{{comment}}</p>
+      </div>
+    </li>
+  </ul>
+  <div class="d-flex justify-content-between pl-4 pr-3 py-3">
+    <div class="avatar default mr-2"></div>
+    <textarea [(ngModel)]="newComment" (keydown.control.enter)="add()" cols="50" rows="9" [(ngModel)]="newName" class="comment-input flex-grow-1 ml-2 mr-3 p-2" ></textarea>
+  </div>
+</div>

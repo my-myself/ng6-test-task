@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="p-4 col-sm-3 col-md-2 d-none d-md-block sidebar">
+      <h1>DAIRY APP</h1>
+      <span>Comment with no sense</span>
+    </div>
+    <main class="col-sm-12 col-xs-12 col-md-10 offset-md-2 p-4">
+      <div class="row">
+        <div [ngClass]="selectedIndex !== -1 ? 'col-md-7' : 'col-md-12'">
+          <app-card [title]="'Items'">
+            <app-items></app-items>
+          </app-card>
+        </div>
+        <div [ngClass]="selectedIndex !== -1 ? 'col-md-5' : 'd-none'">
+          <app-card [title]="'Comments #' + selectedIndex">
+            <app-comments></app-comments>
+          </app-card>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

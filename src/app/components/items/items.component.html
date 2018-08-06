@@ -1,0 +1,32 @@
+<ngx-spinner
+  bdOpacity = 0.9
+  bdColor = "#ffffff"
+  size = "large"
+  color = "blue"
+  type = "line-scale-pulse-out">
+</ngx-spinner>
+<div *ngIf="!isLoading">
+  <div class="d-flex justify-content-between pl-4 pr-3 py-3">
+    <input [(ngModel)]="newName" type="text" class="flex-grow-1 ml-2 mr-3 px-3" placeholder="Type name here..."/>
+    <button (click)="add()" [disabled]="!newName || newName === ''" class="add-btn">
+      Add new
+    </button>
+  </div>
+  <ul class="pb-2">
+    <li *ngIf="items?.length < 1" class="pl-4 pr-3 pt-3">
+      <div class="pl-2 pb-4 d-flex">
+        <h5>There is no items</h5>
+      </div>
+    </li>
+    <li (click)="select(i)" [ngClass]="i === selectedIndex ? 'active' : ''" *ngFor="let item of items; let i = index" [attr.data-index]="i" class="pl-4 pr-3">
+      <div class="item pl-2 d-flex justify-content-between">
+        <div class="py-3">
+          {{item.title}}
+          <span class="count d-inline-block">{{item.comments.length ? item.comments.length : 0}}</span>
+        </div>
+        <button (click)="delete(i)" class="del-btn float-right my-2 px-4">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
+

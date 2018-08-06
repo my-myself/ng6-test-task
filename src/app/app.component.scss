@@ -1,0 +1,20 @@
+@import "../theme/theme-variables";
+
+.sidebar {
+  background-color: $sidebar-bg;
+  color: $sidebar-fg;
+  border: 1px solid $sidebar-border;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  span {
+    font-size: $big-font;
+    color: $sidebar-fg-2nd;
+  }
+}

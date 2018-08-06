@@ -1,0 +1,63 @@
+@import "../../../theme/theme-variables";
+
+button {
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  transition: background-color 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+}
+
+.add-btn {
+  background-color: $btn-bg;
+  color: $btn-fg;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-weight: 600;
+  min-width: 120px;
+
+  &:hover {
+    background-color: $btn-bg-h;
+  }
+}
+
+ul {
+  min-height: 400px;
+  li {
+    cursor: pointer;
+  }
+}
+
+.del-btn {
+  border-radius: 4px;
+  border: $del-btn solid 1px;
+  background: none;
+  color: $del-btn;
+  font-weight: 300;
+  font-size: $medium-font;
+
+  &:hover {
+    color: $del-btn-hov-fg;
+    background-color: $del-btn-hov;
+  }
+
+  &:active {
+    border: $del-btn solid 1px;
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:focus {
+    border: $del-btn solid 1px;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+
